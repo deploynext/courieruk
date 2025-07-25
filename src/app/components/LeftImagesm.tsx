@@ -34,7 +34,8 @@ export default function LeftImagesm({ articles }: LeftImageProps) {
 
          
           <div className="flex flex-col">
-            <span className="text-xs font-semibold text-blue-700 uppercase">
+            
+            <span className="text-[14px] font-semibold text-blue-700 uppercase hover:text-black">
               {item.category}
             </span>
             <Link
@@ -43,7 +44,7 @@ export default function LeftImagesm({ articles }: LeftImageProps) {
             >
               {item.title}
             </Link>
-            <span className="text-sm text-gray-500 mt-1">{item.date}</span>
+            <span className="text-sm text-black mt-1">{item.date}</span>
           </div>
         </div>
       ))}
