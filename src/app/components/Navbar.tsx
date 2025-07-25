@@ -8,7 +8,7 @@ const Navbar = () => {
   const [isLoginHovered, setLoginHovered] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [isNavSticky, setIsNavSticky] = useState(true);
-  const [isMenuHover, setIsMenuHover] = useState(true);
+  const [isMenuHover, setIsMenuHover] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
  useEffect(() => {
   const handleScroll = () => {
@@ -150,7 +150,7 @@ const Navbar = () => {
     </header>
 
     <nav className={`d-none d-md-flex justify-content-center gap-4 py-3 border-bottom bg-light ${isNavSticky ? 'sticky-top' : ''}`}
-    style={{ zIndex: -1 }}
+    style={{ zIndex: 1 }}
     >
       <Link
         href="/"
@@ -171,7 +171,7 @@ const Navbar = () => {
         Politics
       </Link>
       <Link
-        href="/busines"
+        href="/business"
         className="text-dark fw-semibold fs-5 mx-1.5"
         style={{ textDecoration: 'none' }}
         onMouseEnter={(e) => e.currentTarget.style.textDecoration = 'underline'}

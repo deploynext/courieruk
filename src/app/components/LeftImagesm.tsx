@@ -12,38 +12,41 @@ type Article = {
   author?: string;
 };
 
-
-interface LeftImageProps{
-    articles:Article[]
+interface LeftImageProps {
+  articles: Article[];
 }
 
-export default function LeftImagesm ({articles}:LeftImageProps){
-    return(
-        <div>
-        <div className="w-full ">
-          {articles.slice(0, 3).map((item, index) => (
-            <div key={index} className="flex gap-4 mb-5">
-              <Link href={`/${item.category}/${item.slug}`} className="shrink-0">
-                <Image
-                  src={item.image}
-                  alt={item.title}
-                  width={182}
-                  height={103}
-                  className="w-44 h-28 object-cover rounded-md"
-                />
-              </Link>
-              <div className="flex flex-col font-semibold">
-                <Link
-                  href={`/${item.category}/${item.slug}`}
-                  className="ArticleCard-title "
-                >
-                    <span >{item.title}</span>
-                  
-                </Link>
-              </div>
-            </div>
-          ))}
+export default function LeftImagesm({ articles }: LeftImageProps) {
+  return (
+    <div className="w-full">
+      {articles.map((item, index) => (
+        <div key={index} className="flex items-start gap-3 mb-5">
+          
+          <Link href={`/${item.category}/${item.slug}`} className="shrink-0">
+            <Image
+              src={item.image}
+              alt={item.title}
+              width={60}
+              height={60}
+              className="w-[60px] h-[60px] object-cover "
+            />
+          </Link>
+
+         
+          <div className="flex flex-col">
+            <span className="text-xs font-semibold text-blue-700 uppercase">
+              {item.category}
+            </span>
+            <Link
+              href={`/${item.category}/${item.slug}`}
+              className="leftimagetitle"
+            >
+              {item.title}
+            </Link>
+            <span className="text-sm text-gray-500 mt-1">{item.date}</span>
+          </div>
         </div>
-        </div>
-    )
+      ))}
+    </div>
+  );
 }

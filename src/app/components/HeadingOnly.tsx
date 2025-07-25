@@ -8,49 +8,51 @@ export type Article = {
   description: string;
   slug: string;
   category: string;
-  author?:string;
+  author?: string;
 };
 
 interface HeadingOnlyProps {
   article: Article;
   isFeatured?: boolean;
+  index?: number; // used to determine if this is the first item
 }
 
-export default function HeadingOnly({ article, isFeatured = false }: HeadingOnlyProps) {
+export default function HeadingOnly({
+  article,
+  isFeatured = false,
+  index = 0, // default to 0 if not provided
+}: HeadingOnlyProps) {
+  const shouldShowImageOnMobile = index === 0;
+
   return (
-    <article
-      className={`bg-white mt-2 p-2 ${isFeatured ? 'lg:col-span-2' : ''} mx-2 md:mx0`}
-    >
-      <Link href={`/${article.category}/${article.slug}`} className="block mb-4">
-        <div className=" overflow-hidden relative aspect-video">
-          <Image
-            src={article.image}
-            alt={article.title}
-            width={isFeatured ? 640 : 282}
-            height={isFeatured ? 360 : 159}
-            className=" object-cover w-full h-full relative"
-            loading={isFeatured ? 'eager' : 'lazy'}
-            priority={isFeatured}
-          />
-          <div className='absolute left-0 bottom-0 text-blue-900 bg-white uppercase font-bold p-2' >{article.category}</div>
-        </div>
-      </Link>
-      <div
-        className={`font- leading-snug ${
-          isFeatured ? 'text-[26px] font-[600]' : 'text-[22px] font-[700]'
-        }`}
-      >
-        <Link href={`/${article.category}/${article.slug}`}
-          className="ArticleCard-title ">
+    <article className={`bg-white mt-2 ${isFeatured ? 'lg:col-span-2' : ''} mx-2 md:mx-0`}>
+      <Link href={`/${article.category}/${article.slug}`} className="block">
+  <div
+    className={`overflow-hidden 
+      ${shouldShowImageOnMobile ? 'block w-full' : 'hidden'} 
+      sm:block sm:w-[170px] sm:h-[108px]`}
+  >
+    <Image
+  src={article.image}
+  alt={article.title}
+  width={isFeatured ? 640 : 600} 
+  height={isFeatured ? 360 : 200}
+  className="object-cover w-full h-auto"
+  loading={isFeatured ? 'eager' : 'lazy'}
+  priority={isFeatured}
+/>
+
+  </div>
+</Link>
+
+      <div>
+        <Link
+          href={`/${article.category}/${article.slug}`}
+          className="ArticleCard-lighttitle w-[170px]"
+        >
           {article.title}
         </Link>
       </div>
-      
-      <p className='mt-2'>By <span className='text-[#003d73] hover:underline font-bold cursor-pointer'>{article.author}</span></p>
-
-      {isFeatured && article.shortdescription && (
-        <p className="text-gray-700 mt-2 text-base">{article.shortdescription}</p>
-      )}
     </article>
   );
 }

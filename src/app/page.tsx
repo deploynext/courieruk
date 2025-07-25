@@ -7,8 +7,7 @@ import technology from "../data/technology.json"
 import RightImage from "./components/RightImage"
 import ArticleCard from "./components/ArticleCard"
 import NewsBar from "./components/NewsBar"
-import HeadingOnly from "./components/HeadingOnly"
-import LeftImagesm from "./components/LeftImagesm"
+
 
 
 
@@ -38,20 +37,20 @@ export default function Home() {
   const [featured, ...others] = mergedArticles;
   return (
   <div>
-   <div className="container py-4">
+   <div className="wrap">
      <div className="row">
-       <div className="col-md-8 mb-4">
+       <div className="col-md-9 mb-4">
         <RightImage  article={featured} />
         
         <NewsBar articles={mergedArticles}/>  
           
         
        </div>
-       <div className="col-md-4  ">
+       <div className="col-md-3 mt-2 ">
           {others.slice(0,2).map((article, index) => (
-              <ArticleCard key={article.slug ?? index} article={article} />
+              <ArticleCard key={article.slug ?? index} article={article} isFeatured/>
             ))}
-            <LeftImagesm articles={others}/>
+          
        </div>
       </div>
     </div>

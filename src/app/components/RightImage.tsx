@@ -30,7 +30,8 @@ const RightImage = ({ article }: RightImageProps) => {
           alt={article.title}
           width={620}
           height={372}
-          className="img-fluid shadow-sm w-100"
+          className="shadow-sm w-100"
+          style={{maxHeight:'300px' ,objectFit:'cover'}}
           priority
         />
       </Link>
@@ -51,22 +52,23 @@ const RightImage = ({ article }: RightImageProps) => {
   </div>
 
   {/* TEXT - show after image on mobile */}
-  <div className="col-md-4 d-flex flex-column justify-content-between px-3 order-2 order-md-1">
+  <div className="col-md-4 d-flex flex-column justify-content-between px-3 order-2 order-md-1 mb-auto">
     <div>
       <h2 className="h3 fw-bold text-dark leading-tight mb-3">
         <Link
           href={`/${article.category}/${article.slug}`}
           className="ArticleCard-title"
+          style={{fontSize:'24px',lineHeight:'1'}}
         >
           {article.title}
         </Link>
       </h2>
-      <p className="text-muted fs-6">{article.shortdescription}</p>
+      <p className="text-muted " style={{fontSize:'14px'}}>{article.shortdescription}</p>
     </div>
 
-    <div className="d-flex align-items-center gap-2 mt-4">
+    <div className="d-flex align-items-center gap-2 mt-1">
       <Image
-        src="/images/author.webp"
+        src="/images/author.png"
         alt="author"
         width={40}
         height={40}
@@ -74,7 +76,7 @@ const RightImage = ({ article }: RightImageProps) => {
       />
       <div className="flex-row" >
         <span className="me-1 ">By</span>
-        <span className="font-bold text-[#003d73] hover:underline cursor-pointer">{article.author}</span>
+        <span className="font-bold text-[#003d73] hover:underline cursor-pointer">Reporter</span>
        
       </div>
     </div>
