@@ -95,7 +95,7 @@ export default async function CategoryPage({ params }: PageProps) {
           </div>
           
         </div>
-        <div className='col-md-12 border-b-2 border-b-gray-200 w-full pb-1 mt-5 mx-2 mb-2'>
+        <div className='col-md-8 border-b-2 border-b-gray-200 w-full pb-1 mt-5 mx-2 mb-2'>
            <AllCategoryNews params={{ category }} />
         </div>
           <div className='col-md-8'>

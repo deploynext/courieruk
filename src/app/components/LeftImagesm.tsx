@@ -26,9 +26,9 @@ export default function LeftImagesm({ articles }: LeftImageProps) {
             <Image
               src={item.image}
               alt={item.title}
-              width={60}
-              height={60}
-              className="w-[60px] h-[60px] object-cover "
+              width={150}
+              height={100}
+              className="w-[60px] h-[60px] md:w-[120px] md:h-[80px] object-cover "
             />
           </Link>
 

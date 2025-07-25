@@ -24,7 +24,7 @@ export default function ArticleCard({ article, isFeatured = false }: ArticleCard
       className={`bg-white  p-2  ${isFeatured ? 'lg:col-span-2' : ''} mx-2 md:mx-0`}
     >
       <Link href={`/${article.category}/${article.slug}`} className="block ">
-        <div className=" overflow-hidden relative aspect-video">
+        <div className=" overflow-hidden relative aspect-video mb-1">
           <Image
             src={article.image}
             alt={article.title}
