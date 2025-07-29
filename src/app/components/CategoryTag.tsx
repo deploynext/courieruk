@@ -32,7 +32,7 @@ export default function CategoryTag({ article, isFeatured = false }: CategoryTag
             loading={isFeatured ? 'eager' : 'lazy'}
             priority={isFeatured}
           />
-          <div className='absolute left-0 bottom-0 text-blue-900 bg-white uppercase font-bold p-2' >{article.category}</div>
+          <div className='absolute left-0 bottom-0 text-blue-900 bg-white uppercase font-semibold text-sm pt-2 px-1' >{article.category}</div>
         </div>
       </Link>
       <div

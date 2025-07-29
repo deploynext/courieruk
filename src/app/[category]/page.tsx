@@ -72,7 +72,7 @@ export default async function CategoryPage({ params }: PageProps) {
           {articles.slice(6,11).map((article, index) => (
             <div
               key={article.slug ?? index}
-              className=""
+             
             >
               <HeadingOnly key={article.slug} article={article} index={index}/>
             </div>
@@ -99,7 +99,11 @@ export default async function CategoryPage({ params }: PageProps) {
            <AllCategoryNews params={{ category }} />
         </div>
           <div className='col-md-8'>
-            <LeftImagesm articles={articles}/>
+            {articles.map((articles,index)=>(
+              <div key={index}>
+                <LeftImagesm articles={articles}/>
+              </div>
+            ))}
           </div>
         </div>
         

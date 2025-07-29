@@ -84,6 +84,9 @@ const Navbar = () => {
                   <Link onClick={() => setMenuOpen(false)} href="/sports" className="info-link">Sports</Link>
                   <Link onClick={() => setMenuOpen(false)} href="/science" className="info-link">Science</Link>
                   <Link onClick={() => setMenuOpen(false)} href="/technology" className="info-link">Technology</Link>
+                  <Link onClick={() => setMenuOpen(false)} href="/education" className="info-link">Education</Link>
+                  <Link onClick={() => setMenuOpen(false)} href="/entertainment" className="info-link">Entertainment</Link>
+                  <Link onClick={() => setMenuOpen(false)} href="/lifestyle" className="info-link">Lifestyle</Link>
                 </div>
                 <div className="border-top d-flex flex-column px-3 py-3">
                   <Link href="#" className="info-link">About</Link>
@@ -214,6 +217,33 @@ const Navbar = () => {
         onMouseLeave={(e) => e.currentTarget.style.textDecoration = 'none'}
       >
         Technology
+      </Link>
+      <Link
+        href="/education"
+        className="text-dark fw-semibold fs-5 mx-1.5"
+        style={{ textDecoration: 'none' }}
+        onMouseEnter={(e) => e.currentTarget.style.textDecoration = 'underline'}
+        onMouseLeave={(e) => e.currentTarget.style.textDecoration = 'none'}
+      >
+        Education
+      </Link>
+      <Link
+        href="/entertainment"
+        className="text-dark fw-semibold fs-5 mx-1.5"
+        style={{ textDecoration: 'none' }}
+        onMouseEnter={(e) => e.currentTarget.style.textDecoration = 'underline'}
+        onMouseLeave={(e) => e.currentTarget.style.textDecoration = 'none'}
+      >
+        Entertainment
+      </Link>
+      <Link
+        href="/lifestyle"
+        className="text-dark fw-semibold fs-5 mx-1.5"
+        style={{ textDecoration: 'none' }}
+        onMouseEnter={(e) => e.currentTarget.style.textDecoration = 'underline'}
+        onMouseLeave={(e) => e.currentTarget.style.textDecoration = 'none'}
+      >
+        Lifestyle
       </Link>
     </nav>
 

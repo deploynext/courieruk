@@ -13,19 +13,19 @@ type Article = {
 };
 
 interface LeftImageProps {
-  articles: Article[];
+  articles: Article;
 }
 
 export default function LeftImagesm({ articles }: LeftImageProps) {
   return (
     <div className="w-full">
-      {articles.map((item, index) => (
-        <div key={index} className="flex items-start gap-3 mb-5">
+      
+        <div  className="flex items-start gap-3 mb-2 pt-3">
           
-          <Link href={`/${item.category}/${item.slug}`} className="shrink-0">
+          <Link href={`/${articles.category}/${articles.slug}`} className="shrink-0">
             <Image
-              src={item.image}
-              alt={item.title}
+              src={articles.image}
+              alt={articles.title}
               width={150}
               height={100}
               className="w-[60px] h-[60px] md:w-[120px] md:h-[80px] object-cover "
@@ -36,18 +36,18 @@ export default function LeftImagesm({ articles }: LeftImageProps) {
           <div className="flex flex-col">
             
             <span className="text-[14px] font-semibold text-blue-700 uppercase hover:text-black">
-              {item.category}
+              {articles.category}
             </span>
             <Link
-              href={`/${item.category}/${item.slug}`}
+              href={`/${articles.category}/${articles.slug}`}
               className="leftimagetitle"
             >
-              {item.title}
+              {articles.title}
             </Link>
-            <span className="text-sm text-black mt-1">{item.date}</span>
+            <span className="text-sm text-black mt-1">{articles.date}</span>
           </div>
         </div>
-      ))}
+     
     </div>
   );
 }

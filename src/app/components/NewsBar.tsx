@@ -1,4 +1,5 @@
-import ArticleCard from "./ArticleCard";
+
+import TruncateDes from "./TruncateDes";
 
 type Article = {
   title: string;
@@ -22,7 +23,7 @@ export default function NewsBar({ articles }: NewsBarProps) {
     <div className="row">
       {slicedArticles.map((article, index) => (
         <div key={article.slug ?? index} className="col-md-4 border-end border-gray-200">
-          <ArticleCard article={article} isFeatured/>
+          <TruncateDes article={article} isFeatured/>
         </div>
       ))}
     </div>
