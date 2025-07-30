@@ -34,6 +34,7 @@ body {
     width: 100%;
     max-width: 980px;
     box-sizing: border-box;
+    overflow: hidden;
 }
 .button-hover:hover{
  background-color: #003366;

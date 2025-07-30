@@ -52,7 +52,7 @@ export default function Home() {
   const [featured, ...others] = mergedArticles;
   return (
   <div>
-   <div className="wrap">
+   <div className="wrap ">
      <div className="row">
        <div className="col-md-9 mb-4">
         <RightImage  article={featured} />
@@ -266,10 +266,11 @@ export default function Home() {
            </div>
          ))}
        </div>
-       <div className="col-md-12 row">
-        <div className='border-b-2  border-b-gray-200 w-full pb-1 mt-5 mx-2 text-black'>
+       <div className='border-b-2  border-b-gray-200 w-full pb-1 mt-5 mx-2 text-black'>
           <h2 className='fw-bolder'>Latest Education</h2>
         </div>
+       <div className="col-md-12 row">
+        
         {mergedArticles
          .filter(articles => articles.category === "education")
          .slice(0,3)
