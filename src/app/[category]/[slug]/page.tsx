@@ -1,6 +1,11 @@
 import { notFound } from "next/navigation";
 import fs from "fs/promises";
 import path from "path";
+import Details from "@/app/components/Detail";
+import DetailHeader from "@/app/components/DeatailHeader";
+import RightImagesm from "@/app/components/RightImagesm";
+import ForYou from "@/app/components/ForYou";
+
 
 
 interface Article {
@@ -51,8 +56,26 @@ export default async function Page({
 
     if (!article) return notFound();
     return(
-        <div>
-
+        <div className="wrap">
+          <div className="col-md-12  row">
+            
+            <div className="col-md-8"> 
+              <DetailHeader article={article}/>
+              <Details article={article}/>
+              <ForYou articles={articles}/>
+            </div>
+            <div className="col-md-4 ">
+              <div className="shadow-sm mt-64 p-2 overflow-hidden">
+                <h5 className=" fw-bolder text-gray-600 mb-1">Top Stories</h5>
+                {articles.slice(0,10).map((article,index)=>(
+                  <div key={index}>
+                    <RightImagesm article={article}/>
+                  </div>
+                ))}
+              </div>
+              
+            </div>
+          </div>
         </div>
     )
 } catch (error) {
