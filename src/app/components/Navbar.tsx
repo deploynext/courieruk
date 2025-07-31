@@ -14,7 +14,7 @@ const Navbar = () => {
   const handleScroll = () => {
     const scrollY = window.scrollY;
     setIsScrolled(scrollY > 200);
-    setIsNavSticky(scrollY < 200); // unstick after 200px
+    setIsNavSticky(scrollY < 500); // unstick after 200px
   };
 
   window.addEventListener("scroll", handleScroll);

@@ -21,7 +21,7 @@ export default function ForYou({ articles }: ForYouProps) {
           <Link
             href={`/${article.category}/${article.slug}`}
             key={index}
-            className="w-full sm:w-1/2 md:w-1/4 h-full px-2 mb-4 !no-underline"
+            className="w-full sm:w-1/2 md:w-1/4 h-full px-1 mb-4 !no-underline"
           >
             <div className="bg-white rounded-xl shadow transition-shadow duration-300 hover:shadow-xl cursor-pointer flex flex-col h-full min-h-[180px]"> 
               <div className="relative aspect-[7/5] w-full"> 
@@ -33,8 +33,8 @@ export default function ForYou({ articles }: ForYouProps) {
                   sizes="(max-width: 768px) 100vw, 350px"
                 />
               </div>
-              <div className="p-3 flex flex-col justify-between flex-grow">
-                <p className="text-base text-gray-700 overflow-hidden transition-all duration-300 ease-in-out line-clamp-3">
+              <div className="p-1 flex flex-col justify-between flex-grow">
+                <p className="text-sm text-gray-700 overflow-hidden transition-all duration-300 ease-in-out line-clamp-3">
                   {article.title}
                 </p>
               </div>
