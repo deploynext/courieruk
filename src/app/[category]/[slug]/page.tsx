@@ -66,7 +66,7 @@ export default async function Page({
             </div>
             <div className="col-md-4 ">
               <div className="shadow-sm mt-64 p-2 overflow-hidden">
-                <p className=" fw-bolder text-4xl text-gray-700 mb-2">Top Stories</p>
+                <p className=" fw-bolder text-3xl text-gray-800 mb-3">Top Stories</p>
                 {articles.slice(0,10).map((article,index)=>(
                   <div key={index}>
                     <RightImagesm article={article}/>
