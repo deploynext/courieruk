@@ -16,6 +16,7 @@ import lifestyle from "../data/lifestyle.json"
 import education from "../data/education.json"
 import LightHeadArticle from "./components/LightHeadArticle"
 import Exclusive from "./components/Exclusive"
+import FullWidth from "./components/FullWidth"
 
 
 
@@ -45,7 +46,8 @@ const mergedArticles: Article[] = [
 
 export default function Home() {
   if (mergedArticles.length === 0) return <p>No articles available.</p>;
-
+  
+  const sportsArticle = mergedArticles.filter(articles => articles.category === "sports")
   const businessArticle = mergedArticles.filter(articles => articles.category === "business")
   const entertainmentArticle = mergedArticles.filter(articles => articles.category === "entertainment")
   const politicsArticle = mergedArticles.filter(articles => articles.category === "politics")
@@ -100,6 +102,9 @@ export default function Home() {
             ))}
         </div>
        </div>
+       <div className='border-b-2 font-extrabold border-b-gray-200 w-full pb-1 mt-5 mx-2 text-black'>
+          <h2 className='fw-bolder'>Top Story</h2>
+        </div>
         <Exclusive article={entertainmentArticle[0]}/>
        <div className='row'>
         <div className="col-md-8">
@@ -134,18 +139,22 @@ export default function Home() {
        </div>
 
       <div className="col-md-12">
+        <div className='border-b-2 font-extrabold border-b-gray-200 w-full pb-1 mt-5 mx-2 text-black'>
+          <h2 className='fw-bolder'>Exclusive</h2>
+        </div>
           <Exclusive article={politicsArticle[0]}/>
       </div>
 
-      <div>
+      <div className="col-md-12">
         <div className='border-b-2 font-extrabold border-b-gray-200 w-full pb-1 mt-5 mx-2 text-black'>
           <h2 className='fw-bolder'>Latest Sports</h2>
         </div>
+        <FullWidth article={sportsArticle[0]}/>
         <div className="row">
           <div className="col-md-8">
             {mergedArticles
             .filter(articles =>articles.category === "sports" )
-            .slice(0,10)
+            .slice(1,11)
             .map((articles,index)=>(
               <div key={index} className="border-b border-gray-300 pb-0">
                 <LeftImagesm articles={articles}/>

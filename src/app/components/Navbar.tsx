@@ -100,7 +100,7 @@ const Navbar = () => {
           </div>
           <div className="d-block d-md-none">
             <Link  href="/"
-              className="m-0 fw-bold text-md text-decoration-none"
+              className="m-0  text-md text-decoration-none"
               style={{ color: "#003366", letterSpacing: "0.5px" }}
             >
               THE COURIER
@@ -109,14 +109,15 @@ const Navbar = () => {
           {/* CENTER: Logo - hidden in mobile, centered in desktop */}
           
             <Link  href="/"
-                className={`d-none d-md-block fw-bold text-center ml-24 transition-all duration-300 ${
+                className={`d-none d-md-block  text-center ml-44 transition-all duration-300  ${
                   isScrolled ? "text-md" : "text-xl"
                 }`}
                 style={{
                   textDecoration:'none',
-                  fontSize: isScrolled ? "20px" : "32px", 
+                  fontSize: isScrolled ? "25px" : "32px", 
                   transition: "font-size 0.0s ",
                   color: "#003366",
+                  fontWeight:"900"
                 }}
               >
                 THE COURIER

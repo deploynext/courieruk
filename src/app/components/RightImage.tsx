@@ -58,7 +58,7 @@ const RightImage = ({ article }: RightImageProps) => {
         <Link
           href={`/${article.category}/${article.slug}`}
           className="ArticleCard-title"
-          style={{fontSize:'26px',lineHeight:'1'}}
+          style={{fontSize:'26px'}}
         >
           {article.title}
         </Link>
