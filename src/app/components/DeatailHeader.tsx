@@ -30,8 +30,8 @@ export default function DetailHeader({ article }: DetailHeaderProps) {
 
         <h1 className="text-3xl font-bold capitalize mb-1">{article.title}</h1>
       </div>
-      <div className="flex flex-row pb-2 border-b border-gray-300 mb-2">
-        <div className="capitalize me-2">
+      <div className="flex flex-row items-center  pb-2 border-b border-gray-300 mb-2 ml-2">
+        <div className="capitalize me-3 ">
             {article.category}
         </div>
         <div className="group border border-blue-950 shadow-sm rounded-full  items-center justify-center w-20    hover:bg-[#003366]   p-1 cursor-pointer me-2">

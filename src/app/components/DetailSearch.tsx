@@ -4,7 +4,7 @@ import { ChatBubbleOvalLeftIcon, ShareIcon } from "@heroicons/react/16/solid";
 export default function DetailSearch() {
   return (
     <>
-    <div className="flex flex-row my-2">
+    <div className="flex flex-row my-4">
        <div className="group border rounded-full flex flex-row items-center justify-center w-20 font-semibold  text-gray-950 hover:bg-[#003366] hover:text-white  p-1 cursor-pointer me-2"><ShareIcon className="w-[18px] me-1 fill-pink-900 group-hover:fill-white transition-colors duration-300"/>Share</div>
        <div className="group border rounded-full flex flex-row items-center justify-center w-30 font-semibold  text-gray-950 hover:bg-[#003366] hover:text-white  p-1 cursor-pointer"><ChatBubbleOvalLeftIcon  className="w-[18px] me-1 fill-pink-900 group-hover:fill-white transition-colors duration-300"/>comment</div>
     </div>
