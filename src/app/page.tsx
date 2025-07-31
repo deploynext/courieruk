@@ -61,7 +61,7 @@ export default function Home() {
         
         <NewsBar articles={mergedArticles}/>  
        </div>
-       <div className="col-md-3 mt-2 ">
+       <div className="col-md-3 mt-3 ">
           {others.slice(0,2).map((article, index) => (
               <ArticleCard key={article.slug ?? index} article={article} isFeatured/>
             ))}
