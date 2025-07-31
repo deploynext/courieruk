@@ -48,8 +48,7 @@ export default function Home() {
   if (mergedArticles.length === 0) return <p>No articles available.</p>;
   
   const sportsArticle = mergedArticles.filter(articles => articles.category === "sports")
-  const businessArticle = mergedArticles.filter(articles => articles.category === "business")
-  const entertainmentArticle = mergedArticles.filter(articles => articles.category === "entertainment")
+ const healthArticle = mergedArticles.filter(articles => articles.category === "health" )
   const politicsArticle = mergedArticles.filter(articles => articles.category === "politics")
   const [featured, ...others] = mergedArticles;
   return (
@@ -70,7 +69,7 @@ export default function Home() {
        <div className='border-b-2 font-extrabold border-b-gray-200 w-full pb-1 mt-5 mx-2 text-black'>
           <h2 className='fw-bolder'>Top News</h2>
         </div>
-      <Exclusive article={businessArticle[0]}/>
+      <Exclusive article={politicsArticle[0]}/>
       <div className='row'>
         <div className="col-md-8">
           <div className='row'>
@@ -94,7 +93,7 @@ export default function Home() {
           </div>
             {mergedArticles
               .filter(article => article.category === "business")   
-              .slice(0,10)                         
+              .slice(1,11)                         
               .map((article, index) => (
                 <div key={article.slug ?? index} >
                   <MostRead  articles={article} />
@@ -105,7 +104,7 @@ export default function Home() {
        <div className='border-b-2 font-extrabold border-b-gray-200 w-full pb-1 mt-5 mx-2 text-black'>
           <h2 className='fw-bolder'>Top Story</h2>
         </div>
-        <Exclusive article={entertainmentArticle[0]}/>
+        <Exclusive article={healthArticle[0]}/>
        <div className='row'>
         <div className="col-md-8">
           <div className='row'>
@@ -124,7 +123,7 @@ export default function Home() {
         <div className="col-md-4">
           <div>
             <h5 className="text-semibold border-b border-gray-300 py-2">
-              Latest Business content
+              Latest lifestyle content
             </h5>
           </div>
             {mergedArticles
@@ -138,12 +137,7 @@ export default function Home() {
         </div>
        </div>
 
-      <div className="col-md-12">
-        <div className='border-b-2 font-extrabold border-b-gray-200 w-full pb-1 mt-5 mx-2 text-black'>
-          <h2 className='fw-bolder'>Exclusive</h2>
-        </div>
-          <Exclusive article={politicsArticle[0]}/>
-      </div>
+      
 
       <div className="col-md-12">
         <div className='border-b-2 font-extrabold border-b-gray-200 w-full pb-1 mt-5 mx-2 text-black'>
