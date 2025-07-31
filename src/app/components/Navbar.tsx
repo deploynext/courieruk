@@ -101,7 +101,7 @@ const Navbar = () => {
           <div className="d-block d-md-none">
             <Link  href="/"
               className="m-0  text-md text-decoration-none"
-              style={{ color: "#003366", letterSpacing: "0.5px",fontWeight:"900" }}
+              style={{ color: "#003366", letterSpacing: "0.5px",fontWeight:"900" ,fontSize:"22px"}}
             >
               THE COURIER
             </Link>

@@ -17,7 +17,7 @@ export default function ForYou({ articles }: ForYouProps) {
     <div className="bg-[#f3f3f3] py-6 px-4">
       <h4 className="font-semibold text-xl mb-4 ml-1">Tailored just for you</h4>
       <div className="flex flex-wrap -mx-2">
-        {articles.slice(0, 4).map((article, index) => (
+        {articles.slice(10, 14).map((article, index) => (
           <Link
             href={`/${article.category}/${article.slug}`}
             key={index}
