@@ -8,7 +8,7 @@ export default function DetailSearch() {
        <div className="group border rounded-full flex flex-row items-center justify-center w-20 font-semibold  text-gray-950 hover:bg-[#003366] hover:text-white  p-1 cursor-pointer me-2"><ShareIcon className="w-[18px] me-1 fill-pink-900 group-hover:fill-white transition-colors duration-300"/>Share</div>
        <div className="group border rounded-full flex flex-row items-center justify-center w-30 font-semibold  text-gray-950 hover:bg-[#003366] hover:text-white  p-1 cursor-pointer"><ChatBubbleOvalLeftIcon  className="w-[18px] me-1 fill-pink-900 group-hover:fill-white transition-colors duration-300"/>comment</div>
     </div>
-    <div className="bg-[#003366] text-white rounded-lg p-3 max-w-3xl mx-auto shadow">
+    <div className="bg-[#003366] text-white rounded-lg p-3 max-w-3xl mx-auto shadow ">
       <div className="flex flex-col md:flex-row items-center justify-between gap-6">
         {/* Text content */}
         <div className=" w-3/4">
@@ -22,7 +22,7 @@ export default function DetailSearch() {
         </div>
 
         {/* Email input & button */}
-        <form className="flex w-full md:w-auto  md:mt-0 ">
+        <form className="flex w-full md:w-auto  md:mt-0 ml-14 md:ml-0">
           <input
             type="email"
             required
