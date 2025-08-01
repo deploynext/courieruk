@@ -10,7 +10,7 @@ export default function DetailSearch() {
     </div>
     <div className="bg-[#003366] text-white rounded-lg p-3 max-w-3xl mx-auto shadow ">
       <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-        {/* Text content */}
+      
         <div className=" w-3/4">
           <div className="text-xl font-serif font-bold leading-tight mb-1">
             The Courier free daily newsletter
@@ -21,7 +21,7 @@ export default function DetailSearch() {
           </p>
         </div>
 
-        {/* Email input & button */}
+        
         <form className="flex w-full md:w-auto  md:mt-0 ml-14 md:ml-0">
           <input
             type="email"

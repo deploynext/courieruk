@@ -57,15 +57,16 @@ export default async function Page({
     if (!article) return notFound();
     return(
         <div className="wrap">
+          <div className="col-md-8"><DetailHeader article={article}/></div>
           <div className="col-md-12  row">
             
             <div className="col-md-8"> 
-              <DetailHeader article={article}/>
+              
               <Details article={article}/>
               <ForYou articles={articles}/>
             </div>
             <div className="col-md-4 ">
-              <div className="shadow-sm mt-64 p-2 overflow-hidden">
+              <div className="shadow-sm p-2 overflow-hidden">
                 <p className=" fw-bolder text-3xl text-gray-800 mb-3">Top Stories</p>
                 {articles.slice(0,10).map((article,index)=>(
                   <div key={index}>
