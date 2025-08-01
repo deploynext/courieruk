@@ -21,8 +21,8 @@ interface ExclusiveProps {
 export default function Exclusive({ article }: ExclusiveProps) {
     const [showMore, setShowMore] = useState(false);
   return (
-    <main className="min-h-screen bg-white px-4 py-8 max-w-7xl mx-auto">
-     <Link href={`/${article.category}`} className="!no-underline my-2 uppercase  !text-blue-700 hover:!text-gray-900 " >{article.category}</Link >
+    <main className="min-h-screen bg-white  py-8 max-w-7xl px-2">
+     <Link href={`/${article.category}`} className="!no-underline my-2 uppercase font-sans  !text-blue-700 hover:!text-gray-900 " >{article.category}</Link >
 
       <Link href={`/${article.category}/${article.slug}`} className="ArticleCard-title  " >
         <h1 style={{fontSize:"30px",fontWeight:"900"}} className="mt-3">
@@ -38,7 +38,7 @@ export default function Exclusive({ article }: ExclusiveProps) {
             alt={article.title}
             width={650}
             height={390}
-            className=" object-contain h-[210px] md:h-[390px] w-[350px] md:w-[650px] "
+            className=" object-cover h-[210px] md:h-[390px] w-[350px] md:w-[650px] "
             priority
           />
         </div>

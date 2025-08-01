@@ -17,6 +17,8 @@ export default function FullWidth ( {article}:FullWidthProps) {
     return(
 
     <div className="mb-2">
+                <Link href={`/${article.category}`} className=" !text-blue-600 !no-underline uppercase font-sans font-semibold ml-7 text-sm hover:!text-black">{article.category}</Link>
+
         <Link href={`/${article.category}/${article.slug}`} className="ArticleCard-title">
             <h1 style={{fontSize:"30px",fontWeight:"900"}} className="mt-3 mb-2  border-b border-gray-300 pb-2">
               {article.title}

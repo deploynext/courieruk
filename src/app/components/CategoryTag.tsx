@@ -9,6 +9,7 @@ export type Article = {
   slug: string;
   category: string;
   author?:string;
+  date?:string;
 };
 
 interface CategoryTagProps {
@@ -19,8 +20,8 @@ interface CategoryTagProps {
 export default function CategoryTag({ article, isFeatured = false }: CategoryTagProps) {
   return (
     <article
-      className={`bg-white mt-2 p-2 ${isFeatured ? 'lg:col-span-2' : ''} mx-2 md:mx0`}
-    >
+      className={`bg-white  mx-1 md:mx0`}
+    ><div className=''>
       <Link href={`/${article.category}/${article.slug}`} className="block mb-4">
         <div className=" overflow-hidden relative aspect-video">
           <Image
@@ -32,25 +33,21 @@ export default function CategoryTag({ article, isFeatured = false }: CategoryTag
             loading={isFeatured ? 'eager' : 'lazy'}
             priority={isFeatured}
           />
-          <div className='absolute left-0 bottom-0 text-blue-900 bg-white uppercase font-semibold text-sm pt-2 px-1' >{article.category}</div>
+          <div className='absolute left-0 bottom-0 font-sans text-blue-900 bg-white uppercase font-semibold text-sm pt-2 px-1' >{article.category}</div>
         </div>
       </Link>
       <div
-        className={`font- leading-snug ${
+        className={` ${
           isFeatured ? 'text-[26px] font-[600]' : 'text-[22px] font-[700]'
         }`}
       >
         <Link href={`/${article.category}/${article.slug}`}
-          className="ArticleCard-title ">
+          className="ArticleCard-title text-justify">
           {article.title}
         </Link>
       </div>
-      
-      <p className='mt-2'>By <span className='text-[#003d73] hover:underline font-bold cursor-pointer'>Reporter</span></p>
-
-      {isFeatured && article.shortdescription && (
-        <p className="text-gray-700 mt-2 text-base">{article.shortdescription}</p>
-      )}
+      </div>
+      <p className='border-t border-gray-300 pt-2 px-2'>{article.date}</p>
     </article>
   );
 }

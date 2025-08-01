@@ -22,16 +22,16 @@ export default function DetailHeader({ article }: DetailHeaderProps) {
           </Link>
           <span><ChevronRight size={16}/></span>
           <Link href={`/${article.category}`} className="!no-underline">
-            <span className=" capitalize text-gray-600 hover:text-gray-800">
+            <span className="font-sans capitalize text-gray-600 hover:text-gray-800">
               {article.category}
             </span>
           </Link>
         </nav>
 
-        <h1 className="text-3xl font-bold capitalize mb-1">{article.title}</h1>
+        <h1 className="text-3xl fw-bold text-gray-900  capitalize mb-1">{article.title}</h1>
       </div>
       <div className="flex flex-row items-center  pb-2 border-b border-gray-300 mb-2 ml-2">
-        <div className="capitalize me-3 ">
+        <div className="capitalize me-3 font-sans">
             {article.category}
         </div>
         <div className="group border border-blue-950 shadow-sm rounded-full  items-center justify-center w-20    hover:bg-[#003366]   p-1 cursor-pointer me-2">

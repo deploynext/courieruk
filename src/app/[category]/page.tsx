@@ -10,6 +10,7 @@ import HeadingOnly from '../components/HeadingOnly';
 import CategoryTag from '../components/CategoryTag';
 import LeftImagesm from '../components/LeftImagesm';
 import AllCategoryNews from '../components/AllCategoryNews';
+import MostRead from '../components/MostRead';
 
 
 
@@ -49,7 +50,7 @@ export default async function CategoryPage({ params }: PageProps) {
   const articles = await getArticlesByCategory(category);
   if (!articles) return notFound();
   return(
-    <div className="wrap">
+    <div className="wrap font">
       <CategoryHeader article={articles[0]}/>
      <div className="row">
        <div className="col-md-9 mb-4">
@@ -57,7 +58,7 @@ export default async function CategoryPage({ params }: PageProps) {
         <RightImage article={articles[0]}/>
         <NewsBar articles={articles}/>
         </div>
-        <div className="col-md-3 mt-3 ">
+        <div className="col-md-3 mt-4 ">
            {articles.slice(1,3).map((article, index) => (
                <ArticleCard key={article.slug ?? index} article={article} isFeatured/>
              ))}
@@ -65,7 +66,7 @@ export default async function CategoryPage({ params }: PageProps) {
         </div>
         <Centerad/>
         <div className='border-b-2 border-b-gray-200 w-full pb-1 mt-5 mx-2 text-[black]'>
-          <h2>Comment & Analysis</h2>
+          <h3 className='fw-bolder'>Comment & Analysis</h3>
         </div>
         <div className="d-flex flex-column flex-lg-row mt-1
          gap-1">
@@ -78,10 +79,11 @@ export default async function CategoryPage({ params }: PageProps) {
             </div>
           ))}
         </div>
-        <div className='border-b-2 font-extrabold border-b-gray-200 w-full pb-1 mt-5 mx-2 text-black'>
-          <h2 className=''>Top News</h2>
+        <div className='border-b-2  border-b-gray-200 w-full pb-1 mt-5 mx-2 text-black'>
+          <h3 className='fw-bolder'>Top News</h3>
         </div>
-        <div className='flex-row'>
+        <div className='flex-row mt-3'>
+        <div className='col-md-12 row'>
         <div className='col-md-8'>
           <div className='row'>
           {articles.slice(11,17).map((article, index) => (
@@ -95,6 +97,21 @@ export default async function CategoryPage({ params }: PageProps) {
           </div>
           
         </div>
+        <div className='col-md-4'>
+            <div>
+              <h5 className="border-b-2 font-extrabold border-b-gray-200 w-full font-sans mx-2 text-black pb-2">
+                A look back at Past Times
+              </h5>
+                {articles   
+                  .slice(17,27)                         
+                  .map((article, index) => (
+                    <div key={article.slug ?? index} >
+                      <MostRead  articles={article} />
+                    </div>
+                ))}
+            </div>
+          </div>
+          </div>
         <div className='col-md-8 border-b-2 border-b-gray-200 w-full pb-1 mt-5 mx-2 mb-2'>
            <AllCategoryNews params={{ category }} />
         </div>
@@ -105,6 +122,7 @@ export default async function CategoryPage({ params }: PageProps) {
               </div>
             ))}
           </div>
+          
         </div>
         
       </div>

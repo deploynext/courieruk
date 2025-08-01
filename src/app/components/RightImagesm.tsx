@@ -45,7 +45,7 @@ const RightImagesm = ({ article }: RightImagesmProps) => {
       
         <Link
           href={`/${article.category}/${article.slug}`}
-          className="mostreadtitle"
+          className="mostreadtitle text-justify"
           
         >
           {article.title}

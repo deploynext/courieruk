@@ -14,7 +14,7 @@ export default function AllCategoryNews({ params }: PageProps) {
             <span className="text-white text-xl font-bold leading-none">•••</span>
           </div>
           <h2 className="text-[28px] font-semibold text-gray-800">
-           <span className="text-[#005a9e]">All</span> <span className="text-[#003d73]">{category.charAt(0).toUpperCase() + category.slice(1)}</span> <span className="text-[#005a9e]">Posts</span> 
+           <span className="text-[#005a9e] ">All</span> <span className="text-[#003d73] ">{category.charAt(0).toUpperCase() + category.slice(1)}</span> <span className="text-[#005a9e] ">Posts</span> 
           </h2>
         </div>
     )

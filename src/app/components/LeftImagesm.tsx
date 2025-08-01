@@ -35,12 +35,12 @@ export default function LeftImagesm({ articles }: LeftImageProps) {
          
           <div className="flex flex-col">
             
-            <span className="text-[14px] font-semibold text-blue-700 uppercase hover:text-black">
+            <span className="text-[14px] font-semibold text-blue-700 uppercase font-sans hover:text-black">
               {articles.category}
             </span>
             <Link
               href={`/${articles.category}/${articles.slug}`}
-              className="leftimagetitle"
+              className="leftimagetitle text-justify"
             >
               {articles.title}
             </Link>

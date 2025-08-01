@@ -48,7 +48,7 @@ export default function HeadingOnly({
       <div className='border-b border-gray-300 md:border-0'>
         <Link
           href={`/${article.category}/${article.slug}`}
-          className="ArticleCard-lighttitle  w-[170px]"
+          className="ArticleCard-lighttitle text-justify  w-[170px]"
         >
           {article.title}
         </Link>

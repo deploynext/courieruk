@@ -13,7 +13,7 @@ const Navbar = () => {
  useEffect(() => {
   const handleScroll = () => {
     const scrollY = window.scrollY;
-    setIsScrolled(scrollY > 200);
+    setIsScrolled(scrollY > 500);
     setIsNavSticky(scrollY < 500); // unstick after 200px
   };
 
@@ -153,12 +153,12 @@ const Navbar = () => {
        
     </header>
 
-    <nav className={`d-none d-md-flex justify-content-center gap-4 py-3 border-bottom bg-light ${isNavSticky ? 'sticky-top' : ''}`}
+    <nav className={` d-none d-md-flex justify-content-center gap-3 py-3 border-bottom bg-light ${isNavSticky ? 'sticky-top' : ''}`}
     style={{ zIndex: 1 }}
     >
       <Link
         href="/"
-        className="text-dark fw-semibold fs-5 mx-1.5"
+        className="text-dark  mx-2 font-medium "
         style={{ textDecoration: 'none' }}
         onMouseEnter={(e) => e.currentTarget.style.textDecoration = 'underline'}
         onMouseLeave={(e) => e.currentTarget.style.textDecoration = 'none'}
@@ -167,7 +167,7 @@ const Navbar = () => {
       </Link>
       <Link
         href="/politics"
-        className="text-dark fw-semibold fs-5 mx-1.5"
+        className="text-dark  mx-2 font-medium "
         style={{ textDecoration: 'none' }}
         onMouseEnter={(e) => e.currentTarget.style.textDecoration = 'underline'}
         onMouseLeave={(e) => e.currentTarget.style.textDecoration = 'none'}
@@ -176,7 +176,7 @@ const Navbar = () => {
       </Link>
       <Link
         href="/business"
-        className="text-dark fw-semibold fs-5 mx-1.5"
+        className="text-dark  mx-2 font-medium "
         style={{ textDecoration: 'none' }}
         onMouseEnter={(e) => e.currentTarget.style.textDecoration = 'underline'}
         onMouseLeave={(e) => e.currentTarget.style.textDecoration = 'none'}
@@ -185,7 +185,7 @@ const Navbar = () => {
       </Link>
       <Link
         href="/sports"
-        className="text-dark fw-semibold fs-5 mx-1.5"
+        className="text-dark  mx-2 font-medium "
         style={{ textDecoration: 'none' }}
         onMouseEnter={(e) => e.currentTarget.style.textDecoration = 'underline'}
         onMouseLeave={(e) => e.currentTarget.style.textDecoration = 'none'}
@@ -194,7 +194,7 @@ const Navbar = () => {
       </Link>
       <Link
         href="/health"
-        className="text-dark fw-semibold fs-5 mx-1.5"
+        className="text-dark  mx-2 font-medium "
         style={{ textDecoration: 'none' }}
         onMouseEnter={(e) => e.currentTarget.style.textDecoration = 'underline'}
         onMouseLeave={(e) => e.currentTarget.style.textDecoration = 'none'}
@@ -203,7 +203,7 @@ const Navbar = () => {
       </Link>
       <Link
         href="/science"
-        className="text-dark fw-semibold fs-5 mx-1.5"
+        className="text-dark  mx-2 font-medium "
         style={{ textDecoration: 'none' }}
         onMouseEnter={(e) => e.currentTarget.style.textDecoration = 'underline'}
         onMouseLeave={(e) => e.currentTarget.style.textDecoration = 'none'}
@@ -212,7 +212,7 @@ const Navbar = () => {
       </Link>
       <Link
         href="/technology"
-        className="text-dark fw-semibold fs-5 mx-1.5"
+        className="text-dark  mx-2 font-medium "
         style={{ textDecoration: 'none' }}
         onMouseEnter={(e) => e.currentTarget.style.textDecoration = 'underline'}
         onMouseLeave={(e) => e.currentTarget.style.textDecoration = 'none'}
@@ -221,7 +221,7 @@ const Navbar = () => {
       </Link>
       <Link
         href="/education"
-        className="text-dark fw-semibold fs-5 mx-1.5"
+        className="text-dark  mx-2 font-medium "
         style={{ textDecoration: 'none' }}
         onMouseEnter={(e) => e.currentTarget.style.textDecoration = 'underline'}
         onMouseLeave={(e) => e.currentTarget.style.textDecoration = 'none'}
@@ -230,7 +230,7 @@ const Navbar = () => {
       </Link>
       <Link
         href="/entertainment"
-        className="text-dark fw-semibold fs-5 mx-1.5"
+        className="text-dark  mx-2 font-medium "
         style={{ textDecoration: 'none' }}
         onMouseEnter={(e) => e.currentTarget.style.textDecoration = 'underline'}
         onMouseLeave={(e) => e.currentTarget.style.textDecoration = 'none'}
@@ -239,7 +239,7 @@ const Navbar = () => {
       </Link>
       <Link
         href="/lifestyle"
-        className="text-dark fw-semibold fs-5 mx-1.5"
+        className="text-dark  mx-2 font-medium "
         style={{ textDecoration: 'none' }}
         onMouseEnter={(e) => e.currentTarget.style.textDecoration = 'underline'}
         onMouseLeave={(e) => e.currentTarget.style.textDecoration = 'none'}

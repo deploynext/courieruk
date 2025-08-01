@@ -38,7 +38,7 @@ export default function LightHeadArticle({ article, isFeatured = false }: LightH
       </Link>
       <div>
         <Link href={`/${article.category}/${article.slug}`}
-          className="ArticleCard-lighttitle">
+          className="!no-underline !text-gray-800 hover:!underline text-[20px] text-justify">
           {article.title}
         </Link>
       </div>

@@ -21,7 +21,7 @@ export default function ArticleCard({ article, isFeatured = false }: ArticleCard
   return (
     <div>
     <article
-      className={`bg-white  p-2  ${isFeatured ? 'lg:col-span-2' : ''} mx-2 md:mx-0`}
+      className={`bg-white    mx-2 md:mx-0`}
     >
       <Link href={`/${article.category}/${article.slug}`} className="block ">
         <div className=" overflow-hidden relative aspect-video mb-1">
@@ -45,9 +45,9 @@ export default function ArticleCard({ article, isFeatured = false }: ArticleCard
       
 
       {isFeatured && article.shortdescription && (
-        <p className=" text-sm">{article.shortdescription}</p>
+        <p className=" text-sm text-justify">{article.shortdescription}</p>
       )}
-      <p>By <span className='text-[#003d73] hover:underline font-bold cursor-pointer'>Reporter</span></p>
+      <p>By <span className='text-[#003d73] hover:underline font-bold cursor-pointer italic'>Reporter</span></p>
 
     </article>
     </div>

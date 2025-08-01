@@ -21,6 +21,7 @@ import FullWidth from "./components/FullWidth"
 
 
 
+
 type Article ={
   title:string;
   image:string;
@@ -53,24 +54,60 @@ export default function Home() {
   const [featured, ...others] = mergedArticles;
   return (
   <div>
-   <div className="wrap ">
+   <div className="wrap font">
      <div className="row">
-       <div className="col-md-9 mb-4">
+       <div className="col-md-9">
         <RightImage  article={featured} />
         
         <NewsBar articles={mergedArticles}/>  
        </div>
-       <div className="col-md-3 mt-3 ">
+       <div className="col-md-3  mt-4">
           {others.slice(0,2).map((article, index) => (
               <ArticleCard key={article.slug ?? index} article={article} isFeatured/>
             ))}
         </div>
       </div>
-       <div className='border-b-2 font-extrabold border-b-gray-200 w-full pb-1 mt-5 mx-2 text-black'>
+       <div className='border-b-2 font-extrabold border-b-gray-200 w-full pb-1 mt-2 mb-3 text-black'>
           <h2 className='fw-bolder'>Top News</h2>
         </div>
-      <Exclusive article={politicsArticle[0]}/>
+      
       <div className='row'>
+        <div className="col-md-8">
+          <div className='row'>
+            {mergedArticles
+              .filter(article => article.category === "business")   
+              .slice(10,18)                         
+              .map((article, index) => (
+                <div key={article.slug ?? index} className="col-md-6">
+                  <CategoryTag article={article} />
+                </div>
+            ))}
+
+          </div>
+        </div>
+        
+        <div className="col-md-4">
+          <div>
+            <h5 className="text-semibold border-b-2 border-gray-200 pb-2 font-sans">
+              Latest Business content
+            </h5>
+          </div>
+            {mergedArticles
+              .filter(article => article.category === "business")   
+              .slice(1,11)                         
+              .map((article, index) => (
+                <div key={article.slug ?? index} >
+                  <MostRead  articles={article} />
+                </div>
+            ))}
+        </div>
+       </div>
+       {/* poiltics section */}
+       <div className='border-b-2 font-extrabold border-b-gray-200 w-full pb-1 mt-5 mx-2 text-black'>
+          <h2 className='fw-bolder'>Top Story</h2>
+        </div>
+        <Exclusive article={politicsArticle[0]}/>
+       <div className='row'>
         <div className="col-md-8">
           <div className='row'>
             {mergedArticles
@@ -87,13 +124,13 @@ export default function Home() {
         
         <div className="col-md-4">
           <div>
-            <h5 className="text-semibold border-b border-gray-300 py-2">
-              Latest Business content
+            <h5 className="text-semibold border-b font-sans border-gray-300 py-2">
+              Latest politics content
             </h5>
           </div>
             {mergedArticles
-              .filter(article => article.category === "business")   
-              .slice(1,11)                         
+              .filter(article => article.category === "politics")   
+              .slice(1,10)                         
               .map((article, index) => (
                 <div key={article.slug ?? index} >
                   <MostRead  articles={article} />
@@ -101,6 +138,7 @@ export default function Home() {
             ))}
         </div>
        </div>
+       {/* health section */}
        <div className='border-b-2 font-extrabold border-b-gray-200 w-full pb-1 mt-5 mx-2 text-black'>
           <h2 className='fw-bolder'>Top Story</h2>
         </div>
@@ -138,12 +176,10 @@ export default function Home() {
        </div>
 
       
-
+      {/* sports section */}
       <div className="col-md-12">
-        <div className='border-b-2 font-extrabold border-b-gray-200 w-full pb-1 mt-5 mx-2 text-black'>
-          <h2 className='fw-bolder'>Latest Sports</h2>
-        </div>
-        <FullWidth article={sportsArticle[0]}/>
+        <div className="px-4"><FullWidth article={sportsArticle[0]}/></div>
+        
         <div className="row">
           <div className="col-md-8">
             {mergedArticles
@@ -157,7 +193,7 @@ export default function Home() {
           </div>
           <div className="col-md-4">
               <div>
-                <h5 className="border-b-2 font-extrabold border-b-gray-200 w-full  mx-2 text-black py-2">
+                <h5 className="border-b-2 font-extrabold border-b-gray-200 w-full font-sans mx-2 text-black py-2">
                   A look back at Past Times
                 </h5>
                   {mergedArticles
@@ -177,7 +213,7 @@ export default function Home() {
         </div>
        <div className="d-flex flex-column flex-lg-row mt-1 gap-1">
          {mergedArticles
-         .filter(article => article.category === "sports")
+         .filter(article => article.category === "science")
          .slice(10,15)
          .map((article, index) => (
            <div
@@ -187,7 +223,7 @@ export default function Home() {
            </div>
          ))}
        </div>
-       {/* to added item */}
+      
        <div className='border-b-2  border-b-gray-200 w-full pb-1 mt-5 mx-2 text-black'>
           <h2 className='fw-bolder'>Latest Technology</h2>
         </div>

@@ -20,7 +20,7 @@ interface RightImageProps {
 
 const RightImage = ({ article }: RightImageProps) => {
   return (
-    <article className="row g-4 py-4 border-bottom rounded-2xl ">
+    <article className="row g-4 py-4 ">
   {/* IMAGE - show first on mobile */}
   <div className="col-md-8 order-1 order-md-2 border-end border-gray-200">
     <figure className="bg-gray-100">
@@ -63,7 +63,7 @@ const RightImage = ({ article }: RightImageProps) => {
           {article.title}
         </Link>
       </h2>
-      <p className="text-muted " style={{fontSize:'14px'}}>{article.shortdescription}</p>
+      <p className="text-muted text-sm" >{article.shortdescription}</p>
     </div>
 
     <div className="d-flex align-items-center gap-2 mt-1">

@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
 @import "tailwindcss";
 
 /* :root {
@@ -19,10 +21,12 @@
   }
 } */
 
-body {
-  /* background: var(--background);
-  color: var(--foreground); */
-  font-family: Arial, Helvetica, sans-serif;
+
+.font{
+       font-family: "Playfair Display", serif;
+  font-optical-sizing: auto;
+  
+  font-style: normal;
 }
 
 .wrap{
@@ -84,12 +88,11 @@ body {
   background-color: #dbeafe;
 }
 .ArticleCard-title{
-  margin-top: 1rem;
+ 
   font-size: 22px;
   text-decoration: none;
   color:black;
-  font-weight: 700;
-  line-height: 1;
+  font-weight: 800;
 
 }
 .ArticleCard-title:hover{
@@ -101,7 +104,7 @@ body {
 
 
 .ArticleCard-lighttitle{
-  font-size: 16px;
+  font-size: 18px;
   text-decoration: none;
   color:black;
   font-weight: 500;
@@ -125,7 +128,7 @@ line-height: 1;
   text-decoration: none;
   color:black;
   font-weight: 400;
-  line-height: 1;
+  line-height:1.5;
 }
 .mostreadtitle:hover{
   text-decoration: underline;

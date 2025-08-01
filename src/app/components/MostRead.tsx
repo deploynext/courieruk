@@ -24,7 +24,7 @@ export default function MostRead({ articles }: MostReadProps) {
               alt={articles.title}
               width={150}
               height={100}
-              className="w-[60px] h-[60px] md:w-[120px] md:h-[80px] object-cover "
+              className="w-[80px] h-[40px] object-cover "
             />
           </Link>
 
@@ -32,7 +32,7 @@ export default function MostRead({ articles }: MostReadProps) {
           <div className="flex flex-col">
             <Link
               href={`/${articles.category}/${articles.slug}`}
-              className="mostreadtitle"
+              className="mostreadtitle text-justify"
             >
               {articles.title}
             </Link>
